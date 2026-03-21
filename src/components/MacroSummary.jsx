@@ -21,37 +21,61 @@ function MacroSummary({ foods, goals }) {
       {/* Calories */}
       <div className="macro-item">
         <h3 className="macro-title">🔥 Calories</h3>
-        <p className="macro-value">{totals.calories} / {goals.calories} kcal</p>
-        <div className="progress-bar">
-          <div className="progress-fill" style={{ width: `${percent(totals.calories, goals.calories)}%` }}></div>
+        <div className="macro-progress-container">
+          <div
+            className="progress-fill"
+            style={{ width: `${percent(totals.calories, goals.calories)}%` }}
+            data-label={`${Math.round(percent(totals.calories, goals.calories))}%`}
+          ></div>
         </div>
+        <p style={{ textAlign: 'center', marginTop: '5px', fontSize: '0.9rem', color: 'var(--text)' }}>
+          {totals.calories} / {goals.calories} kcal
+        </p>
       </div>
 
       {/* Protein */}
       <div className="macro-item">
         <h3 className="macro-title">💪 Protein</h3>
-        <p className="macro-value">{totals.protein} / {goals.protein} g</p>
-        <div className="progress-bar">
-          <div className="progress-fill" style={{ width: `${percent(totals.protein, goals.protein)}%` }}></div>
+        <div className="macro-progress-container">
+          <div
+            className="progress-fill"
+            style={{ width: `${percent(totals.protein, goals.protein)}%` }}
+            data-label={`${Math.round(percent(totals.protein, goals.protein))}%`}
+          ></div>
         </div>
+        <p style={{ textAlign: 'center', marginTop: '5px', fontSize: '0.9rem', color: 'var(--text)' }}>
+          {totals.protein} / {goals.protein} g
+        </p>
       </div>
 
       {/* Carbs */}
       <div className="macro-item">
         <h3 className="macro-title">🍞 Carbs</h3>
-        <p className="macro-value">{totals.carbs} / {goals.carbs} g</p>
-        <div className="progress-bar">
-          <div className="progress-fill" style={{ width: `${percent(totals.carbs, goals.carbs)}%` }}></div>
+        <div className="macro-progress-container">
+          <div
+            className="progress-fill"
+            style={{ width: `${percent(totals.carbs, goals.carbs)}%` }}
+            data-label={`${Math.round(percent(totals.carbs, goals.carbs))}%`}
+          ></div>
         </div>
+        <p style={{ textAlign: 'center', marginTop: '5px', fontSize: '0.9rem', color: 'var(--text)' }}>
+          {totals.carbs} / {goals.carbs} g
+        </p>
       </div>
 
       {/* Fat */}
       <div className="macro-item">
         <h3 className="macro-title">🥑 Fat</h3>
-        <p className="macro-value">{totals.fat} / {goals.fat} g</p>
-        <div className="progress-bar">
-          <div className="progress-fill" style={{ width: `${percent(totals.fat, goals.fat)}%` }}></div>
+        <div className="macro-progress-container">
+          <div
+            className="progress-fill"
+            style={{ width: `${percent(totals.fat, goals.fat)}%` }}
+            data-label={`${Math.round(percent(totals.fat, goals.fat))}%`}
+          ></div>
         </div>
+        <p style={{ textAlign: 'center', marginTop: '5px', fontSize: '0.9rem', color: 'var(--text)' }}>
+          {totals.fat} / {goals.fat} g
+        </p>
       </div>
     </div>
   );

@@ -34,20 +34,23 @@ function App() {
     <div className="app-container">
       <h1 className="app-title">💪 GymBros Macro Tracker</h1>
 
-      <div className="component-card">
-        <GoalCalculator setGoals={setGoals} />
-      </div>
+      <div className="app-layout">
+        <div className="left-column">
+          <div className="component-card">
+            <MacroSummary foods={foods} goals={goals} />
+          </div>
+        </div>
 
-      <div className="component-card">
-        <FoodForm addFood={addFood} />
-      </div>
+        <div className="right-column">
+          <div className="component-card">
+            <GoalCalculator setGoals={setGoals} />
+          </div>
 
-      <div className="component-card">
-        <MacroSummary foods={foods} goals={goals} />
-      </div>
-
-      <div className="component-card">
-        <FoodList foods={foods} deleteFood={deleteFood} />
+          <div className="component-card">
+            <FoodForm addFood={addFood} />
+            <FoodList foods={foods} deleteFood={deleteFood} />
+          </div>
+        </div>
       </div>
     </div>
   );
