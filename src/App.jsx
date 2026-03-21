@@ -3,6 +3,7 @@ import FoodForm from "./components/FoodForm";
 import FoodList from "./components/FoodList";
 import MacroSummary from "./components/MacroSummary";
 import GoalCalculator from "./components/GoalCalculator";
+import "./styles.css";
 
 function App() {
   const [foods, setFoods] = useState(() => {
@@ -30,18 +31,24 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "600px", margin: "auto" }}>
-      <h1>💪 GymBros Macro Tracker</h1>
+    <div className="app-container">
+      <h1 className="app-title">💪 GymBros Macro Tracker</h1>
 
-      {/* ✅ CORRECT PLACEMENT */}
-      <GoalCalculator setGoals={setGoals} />
+      <div className="component-card">
+        <GoalCalculator setGoals={setGoals} />
+      </div>
 
-      <FoodForm addFood={addFood} />
+      <div className="component-card">
+        <FoodForm addFood={addFood} />
+      </div>
 
-      {/* ✅ PASS goals */}
-      <MacroSummary foods={foods} goals={goals} />
+      <div className="component-card">
+        <MacroSummary foods={foods} goals={goals} />
+      </div>
 
-      <FoodList foods={foods} deleteFood={deleteFood} />
+      <div className="component-card">
+        <FoodList foods={foods} deleteFood={deleteFood} />
+      </div>
     </div>
   );
 }

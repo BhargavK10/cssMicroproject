@@ -36,15 +36,66 @@ function FoodForm({ addFood }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="name" placeholder="Food Name" value={form.name} onChange={handleChange} />
-      <input name="calories" placeholder="Calories" value={form.calories} onChange={handleChange} />
-      <input name="protein" placeholder="Protein" value={form.protein} onChange={handleChange} />
-      <input name="carbs" placeholder="Carbs" value={form.carbs} onChange={handleChange} />
-      <input name="fat" placeholder="Fat" value={form.fat} onChange={handleChange} />
-
-      <button type="submit">Add Food</button>
-    </form>
+    <div>
+      <h2 className="component-title">Add Food</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <input
+            name="name"
+            placeholder="Food Name"
+            value={form.name}
+            onChange={handleChange}
+            className="form-input"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <input
+            name="calories"
+            type="number"
+            placeholder="Calories"
+            value={form.calories}
+            onChange={handleChange}
+            className="form-input"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <input
+            name="protein"
+            type="number"
+            placeholder="Protein (g)"
+            value={form.protein}
+            onChange={handleChange}
+            className="form-input"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <input
+            name="carbs"
+            type="number"
+            placeholder="Carbs (g)"
+            value={form.carbs}
+            onChange={handleChange}
+            className="form-input"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <input
+            name="fat"
+            type="number"
+            placeholder="Fat (g)"
+            value={form.fat}
+            onChange={handleChange}
+            className="form-input"
+            required
+          />
+        </div>
+        <button type="submit" className="btn">Add Food</button>
+      </form>
+    </div>
   );
 }
 

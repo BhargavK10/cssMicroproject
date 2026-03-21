@@ -59,31 +59,59 @@ function GoalCalculator({ setGoals }) {
 
   return (
     <div>
-      <h2>🎯 Smart Macro Calculator</h2>
-
-      <input name="weight" placeholder="Weight (kg)" onChange={handleChange} />
-      <input name="height" placeholder="Height (cm)" onChange={handleChange} />
-      <input name="age" placeholder="Age" onChange={handleChange} />
-
-      <select name="gender" onChange={handleChange}>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-      </select>
-
-      <select name="activity" onChange={handleChange}>
-        <option value="sedentary">Sedentary</option>
-        <option value="light">Light</option>
-        <option value="moderate">Moderate</option>
-        <option value="active">Active</option>
-      </select>
-
-      <select name="goal" onChange={handleChange}>
-        <option value="gain">Muscle Gain</option>
-        <option value="loss">Weight Loss</option>
-      </select>
-
-      <button onClick={calculateMacros}>
-        Calculate Smart Macros
+      <h2 className="component-title">🎯 Macro Calculator</h2>
+      <div className="form-group">
+        <input
+          name="weight"
+          type="number"
+          placeholder="Weight (kg)"
+          onChange={handleChange}
+          className="form-input"
+          required
+        />
+      </div>
+      <div className="form-group">
+        <input
+          name="height"
+          type="number"
+          placeholder="Height (cm)"
+          onChange={handleChange}
+          className="form-input"
+          required
+        />
+      </div>
+      <div className="form-group">
+        <input
+          name="age"
+          type="number"
+          placeholder="Age"
+          onChange={handleChange}
+          className="form-input"
+          required
+        />
+      </div>
+      <div className="form-group">
+        <select name="gender" onChange={handleChange} className="form-select">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div className="form-group">
+        <select name="activity" onChange={handleChange} className="form-select">
+          <option value="sedentary">Sedentary</option>
+          <option value="light">Light Activity</option>
+          <option value="moderate">Moderate Activity</option>
+          <option value="active">Very Active</option>
+        </select>
+      </div>
+      <div className="form-group">
+        <select name="goal" onChange={handleChange} className="form-select">
+          <option value="gain">Muscle Gain</option>
+          <option value="loss">Weight Loss</option>
+        </select>
+      </div>
+      <button onClick={calculateMacros} className="btn">
+        Calculate Macros
       </button>
     </div>
   );
