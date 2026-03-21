@@ -37,8 +37,8 @@ function FoodForm({ addFood }) {
 
   return (
     <div>
-      <h2 className="component-title">🍎 Add Food</h2>
-      <form onSubmit={handleSubmit}>
+      <h2 className="component-title" style={{ fontSize: '1.2rem', marginBottom: '10px' }}>Add Food</h2>
+      <form onSubmit={handleSubmit} className="compact-form">
         <div className="form-group">
           <input
             name="name"
@@ -49,52 +49,55 @@ function FoodForm({ addFood }) {
             required
           />
         </div>
-        <div className="form-group">
-          <input
-            name="calories"
-            type="number"
-            placeholder="Calories"
-            value={form.calories}
-            onChange={handleChange}
-            className="form-input"
-            required
-          />
+        <div className="macro-inputs-grid">
+          <div className="form-group">
+            <input
+              name="calories"
+              type="number"
+              placeholder="Cal"
+              value={form.calories}
+              onChange={handleChange}
+              className="form-input-compact"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              name="protein"
+              type="number"
+              placeholder="P (g)"
+              value={form.protein}
+              onChange={handleChange}
+              className="form-input-compact"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              name="carbs"
+              type="number"
+              placeholder="C (g)"
+              value={form.carbs}
+              onChange={handleChange}
+              className="form-input-compact"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              name="fat"
+              type="number"
+              placeholder="F (g)"
+              value={form.fat}
+              onChange={handleChange}
+              className="form-input-compact"
+              required
+            />
+          </div>
         </div>
-        <div className="form-group">
-          <input
-            name="protein"
-            type="number"
-            placeholder="Protein (g)"
-            value={form.protein}
-            onChange={handleChange}
-            className="form-input"
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            name="carbs"
-            type="number"
-            placeholder="Carbs (g)"
-            value={form.carbs}
-            onChange={handleChange}
-            className="form-input"
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            name="fat"
-            type="number"
-            placeholder="Fat (g)"
-            value={form.fat}
-            onChange={handleChange}
-            className="form-input"
-            required
-          />
-        </div>
-        <button type="submit" className="btn">Add Food</button>
+        <button type="submit" className="btn-compact">Add</button>
       </form>
+      <hr style={{ margin: '12px 0', border: 'none', borderTop: '1px solid var(--border)' }} />
     </div>
   );
 }

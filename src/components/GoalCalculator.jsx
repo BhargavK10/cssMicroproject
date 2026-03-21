@@ -59,7 +59,7 @@ function GoalCalculator({ setGoals }) {
 
   return (
     <div>
-      <h2 className="component-title">🎯 Macro Calculator</h2>
+      <h2 className="component-title">Macro Calculator</h2>
       <div className="form-group">
         <input
           name="weight"

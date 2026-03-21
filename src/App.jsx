@@ -10,7 +10,6 @@ function App() {
     return JSON.parse(localStorage.getItem("foods")) || [];
   });
 
-  // ✅ ADD THIS (missing in your code)
   const [goals, setGoals] = useState({
     calories: 2000,
     protein: 120,
@@ -32,25 +31,26 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1 className="app-title">💪 GymBros Macro Tracker</h1>
+      <h1 className="app-title">Gym Macro Tracker</h1>
 
-      <div className="app-layout">
-        <div className="left-column">
-          <div className="component-card">
-            <MacroSummary foods={foods} goals={goals} />
-          </div>
+      <div className="dashboard">
+
+        {/* LEFT - Summary */}
+        <div className="dashboard-left component-card">
+          <MacroSummary foods={foods} goals={goals} />
         </div>
 
-        <div className="right-column">
-          <div className="component-card">
-            <GoalCalculator setGoals={setGoals} />
-          </div>
-
-          <div className="component-card">
-            <FoodForm addFood={addFood} />
-            <FoodList foods={foods} deleteFood={deleteFood} />
-          </div>
+        {/* CENTER - Food */}
+        <div className="dashboard-center component-card">
+          <FoodForm addFood={addFood} />
+          <FoodList foods={foods} deleteFood={deleteFood} />
         </div>
+
+        {/* RIGHT - Calculator */}
+        <div className="dashboard-right component-card">
+          <GoalCalculator setGoals={setGoals} />
+        </div>
+
       </div>
     </div>
   );
